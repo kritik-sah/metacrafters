@@ -136,6 +136,13 @@ function App() {
     let recieverAddress = data.address;
     let txt = await contract.transferEther(recieverAddress, transferAmount);
     setTransferHash("Transfer confirmation hash: " + txt.hash);
+    toast({
+      title: "Transfer confirmation hash",
+      description: txt.hash,
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
     AccountBalance();
   };
   const WithdrawBalance = async (value) => {

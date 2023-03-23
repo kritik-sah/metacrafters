@@ -9,7 +9,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -22,6 +21,7 @@ import {
 // import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { HiOutlineRefresh } from "react-icons/hi";
+import { RiCopperCoinFill } from "react-icons/ri";
 
 const NavLink = ({ children }) => (
   <Link
@@ -71,11 +71,13 @@ export default function Nav(props) {
                   <MenuButton
                     as={Button}
                     rounded={"full"}
-                    variant={"link"}
                     cursor={"pointer"}
                     minW={0}
                     onClick={() => props.checkBallence()}
                   >
+                    <Button rounded={"full"} colorScheme="teal" variant="ghost">
+                      <RiCopperCoinFill /> {props.balance ? props.balance : 0}
+                    </Button>
                     <Avatar
                       size={"sm"}
                       src={"https://avatars.dicebear.com/api/male/username.svg"}
